@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vormetric DSM UI Test Results Report - Default Theme</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style type="text/css">body{
+  margin: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+}
+
+h2{
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+h3{
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.toggleSuccess, .toggleError{
+  margin-right: 10px;
+}
+
+.errmessages{
+  background-color: rgba(238, 64, 64, 0.43);
+  border: 1px solid rgba(235, 28, 28, 0.78);
+  padding: 5px;
+}
+
+.errmessages h2{
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.errmessages .errors{
+  display: none;
+}
+
+.suites {
+  margin: 0 0 0 30px;
+}
+
+.package {
+  margin: 15px 0;
+}
+.package > .name {
+  cursor: pointer;
+}
+
+.suite {
+  margin: 15px 0;
+}
+
+.suite > .name {
+  cursor: pointer;
+}
+
+ul{
+  list-style: none;
+}
+
+.testcases {
+}
+
+.status{
+  display: inline-block;
+}
+
+.testcase .name {
+  display: inline-block;
+}
+
+.success{
+  color: rgb(0, 0, 255);
+}
+.testcase img{
+  max-width: 80%;
+}
+.package.error > .name{
+  color: rgb(178, 43, 43);
+}
+.suite.error > .name{
+  color: rgb(178, 43, 43);
+}
+
+.testcase.success .name{
+  color: rgb(0, 0, 255);
+}
+.testcase.error .status{
+  color: rgb(178, 43, 43);
+}
+
+    </style>
+    <script type="text/javascript">$(document).ready(function(){
+  $('.package>.name').click(function(){
+    $(this).siblings('.suites').slideToggle();
+  });
+
+  $('.suites, .errmessages, .testcases').hide();
+
+  $('.suite, .errmessages').click(function(){
+    var $elem = $(this);
+    $elem.children('.testcases, .errors').slideToggle();
+  });
+  $('.toggleSuccess').click(function(){
+    $('.package.success').slideToggle();
+  });
+  $('.toggleError').click(function(){
+    $('.package.error').slideToggle();
+  });
+});
+    </script>
+  </head>
+  <body>
+    <h1>Vormetric DSM UI Results</h1>
+    <div id="container"><a href="#" class="toggleSuccess">Show/Hide Successes</a>
+      <div class="errmessages">
+        <h2>Errors<span class="count"> (1)</span></h2>
+        <ul class="errors">
+          <li>ERROR: Unable to locate element: &quot;#License&quot; using: css selector
+    at ClickLicense (/home/saurabh/dsm/pages/settings.js:25:3)
+    at Object.module.exports.DSM Upload License Functional Test (/home/saurabh/dsm/tests/smoke/UploadLicense.js:7:19)
+    at Module.call (/usr/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /usr/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /usr/lib/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:125:13)</li>
+        </ul>
+      </div>
+      <div class="package success">
+        <h2 class="name">&#10003; smoke/ChangePassword</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Global Admin Change Password Functional Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 2014 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 1903 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown_ChangePassword&gt; was visible after 64 milliseconds.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package error">
+        <h2 class="name">&#10005; smoke/ElementPresent</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Login Page Element Validation test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#navbar&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#logo&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#page-section&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#bannerId&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#logoID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#basic-addon1&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#inputName&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#basic-addon1&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#inputPassword&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#isLocalDomainAdmin&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#localLabelId&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#domainNameInput&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#login_loginButton&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#support&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 117 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 78 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite success">
+            <h3 class="name">DSM Top Navigation Bar Element Validation Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#navbar&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#logo&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_ChangePassword&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_MyProfile&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavNotifications&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#getNotification&gt; is present.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite error">
+            <h3 class="name">DSM Change Password Element Validation Test</h3>
+            <ul class="testcases">
+              <li class="testcase error">
+                <div class="status">&#10005;</div>
+                <div class="name">Timed out while waiting for element &lt;#userDropdown_ChangePassword&gt; to be visible for 5000 milliseconds. Expected &quot;visible&quot; but got: &quot;not visible&quot;</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package error">
+        <h2 class="name">&#10005; smoke/ElementsContainsText</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Login Page Element Text Validation Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1134 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#logoID&gt; contains text: &quot;Vormetric&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#localLabelId&gt; contains text: &quot;I administer a restricted domain&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#login_loginButton&gt; contains text: &quot;Log In&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 71 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 108 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite error">
+            <h3 class="name">DSM Top Navigation Bar Element Text Validation Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase error">
+                <div class="status">&#10005;</div>
+                <div class="name">Timed out while waiting for element &lt;#userDropdown_ChangePassword&gt; to be visible for 5000 milliseconds. Expected &quot;visible&quot; but got: &quot;not visible&quot;</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package success">
+        <h2 class="name">&#10003; smoke/LeftPanel</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Global Left Panel Test 1</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1357 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 77 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; contains text: &quot;Home&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; contains text: &quot;Domains&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; contains text: &quot;Admins&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; contains text: &quot;Settings&quot;.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite success">
+            <h3 class="name">DSM Global Left Panel Test 2</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1089 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 82 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; contains text: &quot;Home&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; contains text: &quot;Domains&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; contains text: &quot;Admins&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; contains text: &quot;Settings&quot;.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite success">
+            <h3 class="name">DSM Global Left Panel Test 3</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1034 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 70 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; contains text: &quot;Home&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; contains text: &quot;Domains&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; contains text: &quot;Admins&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; contains text: &quot;Settings&quot;.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite success">
+            <h3 class="name">DSM Global Left Panel Test 4</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 877 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 76 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; contains text: &quot;Home&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; contains text: &quot;Domains&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; contains text: &quot;Admins&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; contains text: &quot;Settings&quot;.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite success">
+            <h3 class="name">DSM Global Left Panel Test 5</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 820 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 81 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#homeID&gt; contains text: &quot;Home&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_domains&gt; contains text: &quot;Domains&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_admins&gt; contains text: &quot;Admins&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#nav_settings&gt; contains text: &quot;Settings&quot;.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package error">
+        <h2 class="name">&#10005; smoke/Login</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Global Login Functional Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1442 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 80 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="suite error">
+            <h3 class="name">DSM Global Username Functional Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 846 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#loginError&gt; is visible.</div>
+              </li>
+              <li class="testcase error">
+                <div class="status">&#10005;</div>
+                <div class="name">Testing if element &lt;#loginError&gt; contains text: &quot;Invalid username/password&quot;. Expected &quot;Invalid username/password&quot; but got: &quot;There was an unrecognized error (code USER_NOT_IN_DOMAIN_WITH_ID) with message 'UNDEFINED' while verifying login information. Please try again later.&quot;</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if value of &lt;#inputName&gt; contains: &quot;&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if value of &lt;#inputPassword&gt; contains: &quot;&quot;.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package success">
+        <h2 class="name">&#10003; smoke/Logout</h2>
+        <div class="suites">
+          <div class="suite success">
+            <h3 class="name">DSM Global LogOut Functional Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 822 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 58 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package error">
+        <h2 class="name">&#10005; smoke/TopNavigationbar</h2>
+        <div class="suites">
+          <div class="suite error">
+            <h3 class="name">DSM Global Top Navigation Bar Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 1091 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 55 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#navbar&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#logo&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_ChangePassword&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_MyProfile&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavNotifications&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#getNotification&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase error">
+                <div class="status">&#10005;</div>
+                <div class="name">Timed out while waiting for element &lt;#userDropdown_ChangePassword&gt; to be visible for 5000 milliseconds. Expected &quot;visible&quot; but got: &quot;not visible&quot;</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="package error">
+        <h2 class="name">&#10005; smoke/UploadLicense</h2>
+        <div class="suites">
+          <div class="suite error">
+            <h3 class="name">DSM Upload License Functional Test</h3>
+            <ul class="testcases">
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#topNavHelp&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#login_loginButton&gt; was visible after 779 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if the page title equals &quot;Vormetric - DSM&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#userDropdown&gt; was visible after 66 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown&gt; contains text: &quot;admin&quot;.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#userDropdown_LogOut&gt; is present.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Element &lt;#pageTitleId&gt; was visible after 50 milliseconds.</div>
+              </li>
+              <li class="testcase success">
+                <div class="status">&#10003;</div>
+                <div class="name">Testing if element &lt;#pageTitleId&gt; is present.</div>
+              </li>
+              <li class="testcase error">
+                <div class="status">&#10005;</div>
+                <div class="name">Timed out while waiting for element &lt;input#licenseFile&gt; to be present for 1000 milliseconds. Expected &quot;visible&quot; but got: &quot;not found&quot;</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

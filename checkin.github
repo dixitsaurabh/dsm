@@ -1,0 +1,5 @@
+rm -rf /home/saurabh/vormetric/dsm/reports/*.xml
+git add *  
+git commit -m "checkin on `date`"
+git remote add origin https://github.com/dixitsaurabh/dsm.git
+git push -u origin master

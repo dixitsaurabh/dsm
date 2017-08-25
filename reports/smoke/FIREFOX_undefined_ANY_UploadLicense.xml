@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="smoke.UploadLicense"
+    errors="1" failures="1" hostname="" id="" package="smoke" skipped="0"
+    tests="1" time="10.10" timestamp="Fri, 25 Aug 2017 07:06:49 GMT">
+  
+    <testcase name="DSM Upload License Functional Test" classname="smoke.UploadLicense" time="10.10" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Timed out while waiting for element &lt;input#licenseFile&gt; to be present for 1000 milliseconds.">    at UploadLicense (/home/saurabh/dsm/pages/uploadLicense.js:30:3)
+    at Object.module.exports.DSM Upload License Functional Test (/home/saurabh/dsm/tests/smoke/UploadLicense.js:8:24)</failure>
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      ERROR: Unable to locate element: &quot;#License&quot; using: css selector
+    at ClickLicense (/home/saurabh/dsm/pages/settings.js:25:3)
+    at Object.module.exports.DSM Upload License Functional Test (/home/saurabh/dsm/tests/smoke/UploadLicense.js:7:19)
+    at Module.call (/usr/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /usr/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /usr/lib/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/usr/lib/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>
